@@ -1,0 +1,54 @@
+aisys-303 Cluster Notes for SGLang Fake-Prefill (8 GPU / EP8)
+=============================================================
+
+Allocation
+----------
+2 nodes × 4 GPUs = 8× NVIDIA RTX A6000 (48GB VRAM each)
+
+The exact nodes depend on the allocation.  After allocating, run
+`ip addr show ib0` on each node to find the IB IP (pattern 10.0.0.{10+N}).
+
+Example (cluster01 + cluster02):
+
+  Node                    ib0 IP       node-rank
+  aisys-303-cluster01     10.0.0.11    0 (head)
+  aisys-303-cluster02     10.0.0.12    1
+
+Network
+-------
+- InfiniBand via ib0, single HCA mlx5_0, 100 Gb/s
+- IB subnet: 10.0.0.0/24
+- No NCCL_IB_GID_INDEX needed (native IB, not RoCE)
+
+Required Environment
+--------------------
+- NCCL_SOCKET_IFNAME=ib0
+- GLOO_SOCKET_IFNAME=ib0
+- SGLANG_LOCAL_IP_NIC=ib0 (requires: pip install netifaces)
+- TRITON_CACHE_DIR=/tmp/triton_cache (avoid NFS corruption)
+- NCCL_IB_HCA=mlx5_0
+
+Key Differences from EP16 (aisys-16)
+-------------------------------------
+- tp-size=8, dp-size=8 (not 16)
+- nnodes=2 (not 4)
+- 1 worker node (not 3)
+- Same mem-fraction-static (0.70) and same model
+
+Quick Start
+-----------
+# From head node:
+bash experiments/scripts/aisys-8/launch_head_ep.sh \
+    <HEAD_IB_IP>:25000 \
+    ./gating_profiles/gating_gptoss120b_sharegpt_200.parquet \
+    /tmp/sglang_head.log
+
+# From worker node:
+bash experiments/scripts/aisys-8/launch_worker_ep.sh \
+    1 <HEAD_IB_IP>:25000 \
+    ./gating_profiles/gating_gptoss120b_sharegpt_200.parquet \
+    /tmp/sglang_w1.log
+
+# Or use the experiment runner from head:
+bash experiments/scripts/aisys-8/run_ep8_skew_comparison.sh \
+    <HEAD_IB_IP>:25000 <WORKER_HOST>

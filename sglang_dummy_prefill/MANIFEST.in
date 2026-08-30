@@ -1,0 +1,3 @@
+include python/pyproject.toml
+include python/README.md
+include python/LICENSE

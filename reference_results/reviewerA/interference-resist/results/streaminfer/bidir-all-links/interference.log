@@ -1,0 +1,31 @@
+07:05:39 [iface] 'bidir-all-links': 8 flow(s) x5 trace=aws_hpc_metal cap=200Gbps streams=8 (rc/RDMA)
+[interfere] Trace loaded: 799,680 samples, median=27.61 GB/s, max=29.83 GB/s
+[interfere] Scaling: max → 200 Gbps (link capacity)
+[interfere] Schedule: 799680 windows × 4.50ms, avg=16.6 Gbps, min=0.0, max=92.7 Gbps
+[interfere] V2 schedule written: 799680 windows × 4.50ms = 3600s, avg_rate=10.3 Gbps, file=6248 KB → /tmp/iface_sched.bin
+07:05:40 [iface]   flow sgpu6 -> sgpu0  ports 18515-18522
+07:05:41 [iface]   flow sgpu0 -> sgpu6  ports 18523-18530
+07:05:43 [iface]   flow sgpu1 -> sgpu2  ports 18531-18538
+07:05:45 [iface]   flow sgpu2 -> sgpu1  ports 18539-18546
+07:05:47 [iface]   flow sgpu5 -> sgpu7  ports 18547-18554
+07:05:48 [iface]   flow sgpu7 -> sgpu5  ports 18555-18562
+07:05:50 [iface]   flow sgpu8 -> sgpu9  ports 18563-18570
+07:05:52 [iface]   flow sgpu9 -> sgpu8  ports 18571-18578
+07:05:57 [iface] interference live: head TX ~79 Gbps RDMA (settled ~0s); warmup 25s ...
+07:10:26 [iface]   flow sgpu6 -> sgpu0: achieved 84.6 / target 63.4 Gbps (8 streams reporting)
+07:10:27 [iface]   flow sgpu0 -> sgpu6: achieved 84.6 / target 63.4 Gbps (8 streams reporting)
+07:10:27 [iface]   flow sgpu1 -> sgpu2: achieved 84.6 / target 63.4 Gbps (8 streams reporting)
+07:10:27 [iface]   flow sgpu2 -> sgpu1: achieved 78.4 / target 57.3 Gbps (8 streams reporting)
+07:10:28 [iface]   flow sgpu5 -> sgpu7: achieved 78.4 / target 57.3 Gbps (8 streams reporting)
+07:10:28 [iface]   flow sgpu7 -> sgpu5: achieved 78.4 / target 57.3 Gbps (8 streams reporting)
+07:10:29 [iface]   flow sgpu8 -> sgpu9: achieved 78.4 / target 57.3 Gbps (8 streams reporting)
+07:10:29 [iface]   flow sgpu9 -> sgpu8: achieved 77.7 / target 82.9 Gbps (8 streams reporting)
+07:10:32 [iface] head TOTAL IB TX ~84 Gbps (interference + NCCL)
+[iface] sgpu6 sender whole-run avg: 80.6 Gbps across 8 streams
+[iface] sgpu0 sender whole-run avg: 80.6 Gbps across 8 streams
+[iface] sgpu1 sender whole-run avg: 80.6 Gbps across 8 streams
+[iface] sgpu2 sender whole-run avg: 80.6 Gbps across 8 streams
+[iface] sgpu5 sender whole-run avg: 80.6 Gbps across 8 streams
+[iface] sgpu7 sender whole-run avg: 80.6 Gbps across 8 streams
+[iface] sgpu8 sender whole-run avg: 80.6 Gbps across 8 streams
+[iface] sgpu9 sender whole-run avg: 80.6 Gbps across 8 streams

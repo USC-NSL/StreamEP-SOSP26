@@ -1,0 +1,13 @@
+
+Throughput (tok/s) & ITL (ms) vs request rate  —  gptoss 18 of 36 layers, sharegpt
+ rate |  SI tput  SI itl |  SG tput  SG itl   SG ok
+---------------------------------------------------
+   25 |     7354      87 |     7282      52  100.0%
+   50 |    14510     110 |    13657      65  100.0%
+  100 |    26419     155 |    22671     113  100.0%
+  150 |    32592     235 |    25135     124   88.7%
+  200 |    34159     261 |    25273     126   73.2%
+
+(SI=StreamInfer, SG=sglang; tput=output tok/s; itl in ms; SG ok=completed/prompted requests)
+wrote /home/yizhuoliang/StreamEP-Artifact/experiment_utils/throughput-itl/results/comparison.csv
+wrote /home/yizhuoliang/StreamEP-Artifact/experiment_utils/throughput-itl/results/comparison.png

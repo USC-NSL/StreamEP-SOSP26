@@ -1,0 +1,1 @@
+Run EP16 balanced-legal at mem-frac 0.77 with the same 10k, 2000 rps, random 256-512 in/out, fake-prefill, and recorder settings as sgl-043, but cap max-running-requests to 3240 to compare the original 0.77 run against a roughly half-concurrency configuration.

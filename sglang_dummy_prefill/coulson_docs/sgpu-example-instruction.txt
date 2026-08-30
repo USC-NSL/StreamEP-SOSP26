@@ -1,0 +1,51 @@
+This current node is sgpu4, where you can always use ssh to directly access sgpu6, sgpu7, and sgpu8
+Each node has 2 L40S gpus.
+The corresponding ip of those 4,6,7,8 node are 10.0.0.1, 10.0.0.2, 10.0.0.3, 10.0.0.4, while using the RoCE-capable ens1f1np1 interface.
+
+All python environment, is installed inside the "sglang-fp" conda env, that's the env you should use.
+If this env doesn't exist, create one, with python3.12.
+
+This special fork of sgalng implements fake-prefill and profile-driven gating. The remote is https://github.com/shawlleyw/sglang, with branch fake_prefill_coul.
+Please install here in this node and all other worker nodes (in sglang-fp conda env).
+
+Now I need you to test, using TP8 with this 8 gpu cluster, to test the performance of running gptoss 120b model.
+
+For your reference, we use something like the below to start sglang server:
+on head (this node)
+
+python -m sglang.launch_server \
+    --model-path Qwen/Qwen3-30B-A3B \
+    --load-format dummy \
+    --tp-size 4 \
+    --nnodes 2 \
+    --node-rank 0 \
+    --dist-init-addr 172.29.0.15:25000 \
+    --enable-fake-prefill \
+    --profile-driven-gate-path ./gating_profiles/gating_qwen3_sharegptv3_155.parquet \
+    --disable-radix-cache \
+    --chunked-prefill-size -1 \
+    --mem-fraction-static 0.9 \
+    --trust-remote-code \
+    --log-level-http warning \
+    --log-level warning
+
+Here, you need to change the gating path to use gating_gptoss120b_200.parquet that you have here.
+Also change the tp-size, the nnodes, the addrs, and the model. Other configs should stay as-is.
+
+Then, with a tp8 server launched, I need you to test something like this request workload:
+python -m sglang.bench_serving \
+  --backend sglang \
+  --host 127.0.0.1 \
+  --port 30000 \
+  --model Qwen/Qwen3-30B-A3B \
+  --dataset-name random \
+  --random-input-len 32 \
+  --random-output-len 1024 \
+  --num-prompts 2000 \
+  --request-rate 500 \
+  --random-range-ratio 1.0
+But I need you to tweak this example command so that we have:
+input length 128 - 256, output length 512 - 1024, and it should be the gptoss 120b.
+
+After test this, restart the server, then test 1000 prompts with 250 rate. I need the produced metrics for both runs.
+I also want to see the output logs of the server for those 2 runs when you can succesfully run them.

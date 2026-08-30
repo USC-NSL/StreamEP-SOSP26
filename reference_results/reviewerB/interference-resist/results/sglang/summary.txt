@@ -1,0 +1,20 @@
+
+Network-interference tolerance  —  gptoss 18 of 36 layers, sharegpt, fixed rate
+(tput=output tok/s; itl in ms; tput_drop=throughput drop vs baseline; ITLx=ITL inflation vs baseline)
+
+     system |       condition |     tput     itl | tput_drop   ITLx
+-------------------------------------------------------------------
+StreamInfer |        baseline |    19426     123 |         -      -
+StreamInfer |     single-link |    19332     123 |        0%  1.00x
+StreamInfer |  single-link 2x |    19085     122 |        2%  0.99x
+StreamInfer |       all links |    19332     125 |        0%  1.02x
+StreamInfer | bidir. all links |    18603     134 |        4%  1.09x
+-------------------------------------------------------------------
+  sglang EP |        baseline |    17815      81 |         -      -
+  sglang EP |     single-link |    17052      92 |        4%  1.14x
+  sglang EP |  single-link 2x |    12395     192 |       30%  2.37x
+  sglang EP |       all links |    16443     100 |        8%  1.24x
+  sglang EP | bidir. all links |    15664     112 |       12%  1.38x
+-------------------------------------------------------------------
+wrote /home/yizhuoliang/StreamEP-Artifact/experiment_utils/interference-resist/results/interference.csv
+wrote /home/yizhuoliang/StreamEP-Artifact/experiment_utils/interference-resist/results/interference.png

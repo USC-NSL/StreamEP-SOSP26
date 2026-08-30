@@ -1,0 +1,1966 @@
+[2026-08-01 05:01:00] WARNING server_args.py:1395: DP attention is enabled. The chunked prefill size is adjusted to -1 to avoid MoE kernel issues. 
+[2026-08-01 05:01:00] WARNING server_args.py:1456: Mooncake-NCCL EP is enabled (standard EP with NCCL all-reduce, no Mooncake C++ runtime). The expert parallel size is adjusted to be the same as the tensor parallel size[16].
+[2026-08-01 05:01:00] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2026-08-01 05:01:04] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2026-08-01 05:01:04] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2026-08-01 05:01:08] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[2026-08-01 05:01:08] INFO trace.py:52: opentelemetry package is not installed, tracing disabled
+[Gloo] Rank 0 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 1 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 1 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[Gloo] Rank 0 is connected to 15 peer ranks. Expected number of connected peer ranks is : 15
+[2026-08-01 05:01:10 DP0 TP0 EP0] Custom allreduce is disabled because this process group spans across nodes.
+[2026-08-01 05:01:10 DP1 TP1 EP1] Custom allreduce is disabled because this process group spans across nodes.
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+NCCL version 2.27.3+cuda12.9
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+[2026-08-01 05:01:11 DP0 TP0 EP0] KV cache allocation: avail_after_weights(A)=26.3065 GiB, avail_before_weights(B)=43.7459 GiB, mem_fraction_static=0.76, reservation=B*(1-m)=10.4990 GiB, rest_memory(KV budget)=15.8074 GiB, cell_size=73728 bytes/token, max_num_token=230212, total_kv_cache=15.8074 GiB
+[2026-08-01 05:01:11 DP1 TP1 EP1] KV cache allocation: avail_after_weights(A)=26.3065 GiB, avail_before_weights(B)=43.7459 GiB, mem_fraction_static=0.76, reservation=B*(1-m)=10.4990 GiB, rest_memory(KV budget)=15.8074 GiB, cell_size=73728 bytes/token, max_num_token=230212, total_kv_cache=15.8074 GiB
+[2026-08-01 05:01:11 DP0 TP0 EP0] MHATokenToKVPool _create_buffers: size 230212, page_size 1, head_num 8, head_dim 64, layer_num 36, device cuda
+[2026-08-01 05:01:11 DP1 TP1 EP1] MHATokenToKVPool _create_buffers: size 230212, page_size 1, head_num 8, head_dim 64, layer_num 36, device cuda
+  0%|          | 0/38 [00:00<?, ?it/s]Capturing batches (bs=288 avail_mem=8.91 GB):   0%|          | 0/38 [00:00<?, ?it/s]Capturing batches (bs=288 avail_mem=8.91 GB):   3%|▎         | 1/38 [00:01<00:37,  1.02s/it]Capturing batches (bs=272 avail_mem=8.42 GB):   3%|▎         | 1/38 [00:01<00:37,  1.02s/it]Capturing batches (bs=272 avail_mem=8.42 GB):   5%|▌         | 2/38 [00:01<00:29,  1.22it/s]Capturing batches (bs=256 avail_mem=8.40 GB):   5%|▌         | 2/38 [00:01<00:29,  1.22it/s]Capturing batches (bs=256 avail_mem=8.40 GB):   8%|▊         | 3/38 [00:02<00:24,  1.41it/s]Capturing batches (bs=248 avail_mem=8.38 GB):   8%|▊         | 3/38 [00:02<00:24,  1.41it/s]Capturing batches (bs=248 avail_mem=8.38 GB):  11%|█         | 4/38 [00:02<00:22,  1.54it/s]Capturing batches (bs=240 avail_mem=8.37 GB):  11%|█         | 4/38 [00:02<00:22,  1.54it/s]Capturing batches (bs=240 avail_mem=8.37 GB):  13%|█▎        | 5/38 [00:03<00:20,  1.63it/s]Capturing batches (bs=232 avail_mem=8.35 GB):  13%|█▎        | 5/38 [00:03<00:20,  1.63it/s]Capturing batches (bs=232 avail_mem=8.35 GB):  16%|█▌        | 6/38 [00:03<00:18,  1.71it/s]Capturing batches (bs=224 avail_mem=8.34 GB):  16%|█▌        | 6/38 [00:03<00:18,  1.71it/s]Capturing batches (bs=224 avail_mem=8.34 GB):  18%|█▊        | 7/38 [00:04<00:17,  1.79it/s]Capturing batches (bs=216 avail_mem=8.32 GB):  18%|█▊        | 7/38 [00:04<00:17,  1.79it/s]Capturing batches (bs=216 avail_mem=8.32 GB):  21%|██        | 8/38 [00:04<00:16,  1.86it/s]Capturing batches (bs=208 avail_mem=8.30 GB):  21%|██        | 8/38 [00:04<00:16,  1.86it/s]Capturing batches (bs=208 avail_mem=8.30 GB):  24%|██▎       | 9/38 [00:05<00:15,  1.93it/s]Capturing batches (bs=200 avail_mem=8.29 GB):  24%|██▎       | 9/38 [00:05<00:15,  1.93it/s]Capturing batches (bs=200 avail_mem=8.29 GB):  26%|██▋       | 10/38 [00:05<00:14,  2.00it/s]Capturing batches (bs=192 avail_mem=8.27 GB):  26%|██▋       | 10/38 [00:05<00:14,  2.00it/s]Capturing batches (bs=192 avail_mem=8.27 GB):  29%|██▉       | 11/38 [00:06<00:13,  2.07it/s]Capturing batches (bs=184 avail_mem=8.26 GB):  29%|██▉       | 11/38 [00:06<00:13,  2.07it/s]Capturing batches (bs=184 avail_mem=8.26 GB):  32%|███▏      | 12/38 [00:06<00:12,  2.15it/s]Capturing batches (bs=176 avail_mem=8.24 GB):  32%|███▏      | 12/38 [00:06<00:12,  2.15it/s]Capturing batches (bs=176 avail_mem=8.24 GB):  34%|███▍      | 13/38 [00:07<00:11,  2.23it/s]Capturing batches (bs=168 avail_mem=8.23 GB):  34%|███▍      | 13/38 [00:07<00:11,  2.23it/s]Capturing batches (bs=168 avail_mem=8.23 GB):  37%|███▋      | 14/38 [00:07<00:10,  2.32it/s]Capturing batches (bs=160 avail_mem=8.21 GB):  37%|███▋      | 14/38 [00:07<00:10,  2.32it/s]Capturing batches (bs=160 avail_mem=8.21 GB):  39%|███▉      | 15/38 [00:07<00:09,  2.41it/s]Capturing batches (bs=152 avail_mem=8.19 GB):  39%|███▉      | 15/38 [00:07<00:09,  2.41it/s]Capturing batches (bs=152 avail_mem=8.19 GB):  42%|████▏     | 16/38 [00:08<00:08,  2.51it/s]Capturing batches (bs=144 avail_mem=8.18 GB):  42%|████▏     | 16/38 [00:08<00:08,  2.51it/s]Capturing batches (bs=144 avail_mem=8.18 GB):  45%|████▍     | 17/38 [00:08<00:08,  2.61it/s]Capturing batches (bs=136 avail_mem=8.16 GB):  45%|████▍     | 17/38 [00:08<00:08,  2.61it/s]Capturing batches (bs=136 avail_mem=8.16 GB):  47%|████▋     | 18/38 [00:08<00:07,  2.74it/s]Capturing batches (bs=128 avail_mem=8.15 GB):  47%|████▋     | 18/38 [00:08<00:07,  2.74it/s]Capturing batches (bs=128 avail_mem=8.15 GB):  50%|█████     | 19/38 [00:09<00:06,  2.87it/s]Capturing batches (bs=120 avail_mem=8.13 GB):  50%|█████     | 19/38 [00:09<00:06,  2.87it/s]Capturing batches (bs=120 avail_mem=8.13 GB):  53%|█████▎    | 20/38 [00:09<00:05,  3.01it/s]Capturing batches (bs=112 avail_mem=8.12 GB):  53%|█████▎    | 20/38 [00:09<00:05,  3.01it/s]Capturing batches (bs=112 avail_mem=8.12 GB):  55%|█████▌    | 21/38 [00:09<00:05,  3.17it/s]Capturing batches (bs=104 avail_mem=8.10 GB):  55%|█████▌    | 21/38 [00:09<00:05,  3.17it/s]Capturing batches (bs=104 avail_mem=8.10 GB):  58%|█████▊    | 22/38 [00:10<00:04,  3.33it/s]Capturing batches (bs=96 avail_mem=8.09 GB):  58%|█████▊    | 22/38 [00:10<00:04,  3.33it/s] Capturing batches (bs=96 avail_mem=8.09 GB):  61%|██████    | 23/38 [00:10<00:04,  3.51it/s]Capturing batches (bs=88 avail_mem=8.07 GB):  61%|██████    | 23/38 [00:10<00:04,  3.51it/s]Capturing batches (bs=88 avail_mem=8.07 GB):  63%|██████▎   | 24/38 [00:10<00:03,  3.72it/s]Capturing batches (bs=80 avail_mem=8.06 GB):  63%|██████▎   | 24/38 [00:10<00:03,  3.72it/s]Capturing batches (bs=80 avail_mem=8.06 GB):  66%|██████▌   | 25/38 [00:10<00:03,  3.97it/s]Capturing batches (bs=72 avail_mem=8.04 GB):  66%|██████▌   | 25/38 [00:10<00:03,  3.97it/s]Capturing batches (bs=72 avail_mem=8.04 GB):  68%|██████▊   | 26/38 [00:10<00:02,  4.22it/s]Capturing batches (bs=64 avail_mem=8.03 GB):  68%|██████▊   | 26/38 [00:10<00:02,  4.22it/s]Capturing batches (bs=64 avail_mem=8.03 GB):  71%|███████   | 27/38 [00:11<00:02,  4.51it/s]Capturing batches (bs=56 avail_mem=8.01 GB):  71%|███████   | 27/38 [00:11<00:02,  4.51it/s]Capturing batches (bs=56 avail_mem=8.01 GB):  74%|███████▎  | 28/38 [00:11<00:02,  4.82it/s]Capturing batches (bs=48 avail_mem=7.99 GB):  74%|███████▎  | 28/38 [00:11<00:02,  4.82it/s]Capturing batches (bs=48 avail_mem=7.99 GB):  76%|███████▋  | 29/38 [00:11<00:01,  5.22it/s]Capturing batches (bs=40 avail_mem=7.98 GB):  76%|███████▋  | 29/38 [00:11<00:01,  5.22it/s]Capturing batches (bs=40 avail_mem=7.98 GB):  79%|███████▉  | 30/38 [00:11<00:01,  5.33it/s]Capturing batches (bs=32 avail_mem=7.96 GB):  79%|███████▉  | 30/38 [00:11<00:01,  5.33it/s]Capturing batches (bs=32 avail_mem=7.96 GB):  82%|████████▏ | 31/38 [00:11<00:01,  5.62it/s]Capturing batches (bs=24 avail_mem=7.95 GB):  82%|████████▏ | 31/38 [00:11<00:01,  5.62it/s]Capturing batches (bs=24 avail_mem=7.95 GB):  84%|████████▍ | 32/38 [00:11<00:01,  5.96it/s]Capturing batches (bs=16 avail_mem=7.93 GB):  84%|████████▍ | 32/38 [00:11<00:01,  5.96it/s]Capturing batches (bs=16 avail_mem=7.93 GB):  87%|████████▋ | 33/38 [00:12<00:00,  6.30it/s]Capturing batches (bs=12 avail_mem=7.92 GB):  87%|████████▋ | 33/38 [00:12<00:00,  6.30it/s]Capturing batches (bs=12 avail_mem=7.92 GB):  89%|████████▉ | 34/38 [00:12<00:00,  7.00it/s]Capturing batches (bs=8 avail_mem=7.90 GB):  89%|████████▉ | 34/38 [00:12<00:00,  7.00it/s] Capturing batches (bs=4 avail_mem=7.88 GB):  89%|████████▉ | 34/38 [00:12<00:00,  7.00it/s]Capturing batches (bs=4 avail_mem=7.88 GB):  95%|█████████▍| 36/38 [00:12<00:00,  8.57it/s]Capturing batches (bs=2 avail_mem=7.87 GB):  95%|█████████▍| 36/38 [00:12<00:00,  8.57it/s]Capturing batches (bs=2 avail_mem=7.87 GB):  97%|█████████▋| 37/38 [00:12<00:00,  8.58it/s]Capturing batches (bs=1 avail_mem=7.86 GB):  97%|█████████▋| 37/38 [00:12<00:00,  8.58it/s]Capturing batches (bs=1 avail_mem=7.86 GB): 100%|██████████| 38/38 [00:12<00:00,  8.26it/s]Capturing batches (bs=1 avail_mem=7.86 GB): 100%|██████████| 38/38 [00:12<00:00,  3.01it/s]
+[2026-08-01 05:01:27] The server is fired up and ready to roll!
+[2026-08-01 05:01:37] from Detokenizer Manager, Throughput: 30.2 tokens/s, In-flight requests: 8, Waiting requests: 0, ITL mean=34.91 ms, median=21.16 ms, p99=139.94 ms, samples=164
+[2026-08-01 05:01:47] from Detokenizer Manager, Throughput: 2276.1 tokens/s, In-flight requests: 253, Waiting requests: 0, ITL mean=59.72 ms, median=58.66 ms, p99=79.43 ms, samples=21801
+[2026-08-01 05:01:57] from Detokenizer Manager, Throughput: 4189.9 tokens/s, In-flight requests: 399, Waiting requests: 0, ITL mean=79.70 ms, median=80.25 ms, p99=86.16 ms, samples=41061
+[2026-08-01 05:02:07] from Detokenizer Manager, Throughput: 5371.2 tokens/s, In-flight requests: 532, Waiting requests: 0, ITL mean=89.65 ms, median=92.81 ms, p99=98.87 ms, samples=52809
+[2026-08-01 05:02:17] from Detokenizer Manager, Throughput: 6344.2 tokens/s, In-flight requests: 548, Waiting requests: 0, ITL mean=85.96 ms, median=83.97 ms, p99=98.47 ms, samples=62973
+[2026-08-01 05:02:27] from Detokenizer Manager, Throughput: 6888.9 tokens/s, In-flight requests: 563, Waiting requests: 0, ITL mean=83.29 ms, median=83.34 ms, p99=90.59 ms, samples=68097
+[2026-08-01 05:02:37] from Detokenizer Manager, Throughput: 6919.5 tokens/s, In-flight requests: 599, Waiting requests: 0, ITL mean=84.70 ms, median=83.59 ms, p99=96.44 ms, samples=68727
+[2026-08-01 05:02:47] from Detokenizer Manager, Throughput: 7254.7 tokens/s, In-flight requests: 626, Waiting requests: 0, ITL mean=85.87 ms, median=84.15 ms, p99=97.53 ms, samples=71906
+[2026-08-01 05:02:57] from Detokenizer Manager, Throughput: 7648.9 tokens/s, In-flight requests: 626, Waiting requests: 0, ITL mean=83.07 ms, median=83.13 ms, p99=91.53 ms, samples=76022
+[2026-08-01 05:03:07] from Detokenizer Manager, Throughput: 7666.2 tokens/s, In-flight requests: 596, Waiting requests: 0, ITL mean=82.86 ms, median=82.87 ms, p99=91.97 ms, samples=75962
+[2026-08-01 05:03:17] from Detokenizer Manager, Throughput: 7378.4 tokens/s, In-flight requests: 602, Waiting requests: 0, ITL mean=83.05 ms, median=83.08 ms, p99=91.65 ms, samples=73232
+[2026-08-01 05:03:27] from Detokenizer Manager, Throughput: 6977.5 tokens/s, In-flight requests: 614, Waiting requests: 0, ITL mean=85.57 ms, median=83.29 ms, p99=96.09 ms, samples=68971
+[2026-08-01 05:03:37] from Detokenizer Manager, Throughput: 7300.7 tokens/s, In-flight requests: 586, Waiting requests: 0, ITL mean=83.05 ms, median=83.08 ms, p99=85.74 ms, samples=72603
+[2026-08-01 05:03:47] from Detokenizer Manager, Throughput: 7162.5 tokens/s, In-flight requests: 592, Waiting requests: 0, ITL mean=83.85 ms, median=83.26 ms, p99=94.68 ms, samples=71263
+[2026-08-01 05:03:57] from Detokenizer Manager, Throughput: 6838.8 tokens/s, In-flight requests: 618, Waiting requests: 0, ITL mean=87.49 ms, median=83.66 ms, p99=96.46 ms, samples=67972
+[2026-08-01 05:04:08] from Detokenizer Manager, Throughput: 7550.0 tokens/s, In-flight requests: 636, Waiting requests: 0, ITL mean=83.03 ms, median=83.00 ms, p99=85.48 ms, samples=74933
+[2026-08-01 05:04:18] from Detokenizer Manager, Throughput: 7659.8 tokens/s, In-flight requests: 639, Waiting requests: 0, ITL mean=84.24 ms, median=83.19 ms, p99=93.25 ms, samples=75954
+[2026-08-01 05:04:28] from Detokenizer Manager, Throughput: 7066.7 tokens/s, In-flight requests: 620, Waiting requests: 0, ITL mean=90.25 ms, median=91.86 ms, p99=94.24 ms, samples=70066
+[2026-08-01 05:04:38] from Detokenizer Manager, Throughput: 7401.9 tokens/s, In-flight requests: 612, Waiting requests: 0, ITL mean=84.72 ms, median=83.12 ms, p99=93.79 ms, samples=73665
+[2026-08-01 05:04:48] from Detokenizer Manager, Throughput: 7353.3 tokens/s, In-flight requests: 580, Waiting requests: 0, ITL mean=82.93 ms, median=82.97 ms, p99=89.76 ms, samples=73015
+[2026-08-01 05:04:58] from Detokenizer Manager, Throughput: 7116.0 tokens/s, In-flight requests: 608, Waiting requests: 0, ITL mean=82.94 ms, median=82.97 ms, p99=90.80 ms, samples=70538
+[2026-08-01 05:05:08] from Detokenizer Manager, Throughput: 6770.8 tokens/s, In-flight requests: 503, Waiting requests: 0, ITL mean=86.87 ms, median=84.49 ms, p99=97.72 ms, samples=67485
+[2026-08-01 05:05:18] from Detokenizer Manager, Throughput: 4891.3 tokens/s, In-flight requests: 322, Waiting requests: 0, ITL mean=84.72 ms, median=82.17 ms, p99=98.55 ms, samples=48936
+[2026-08-01 05:05:28] from Detokenizer Manager, Throughput: 3201.7 tokens/s, In-flight requests: 151, Waiting requests: 0, ITL mean=73.41 ms, median=76.42 ms, p99=80.48 ms, samples=32084
+[2026-08-01 05:05:38] from Detokenizer Manager, Throughput: 1739.2 tokens/s, In-flight requests: 57, Waiting requests: 0, ITL mean=57.72 ms, median=57.37 ms, p99=64.14 ms, samples=17396
+[2026-08-01 05:05:48] from Detokenizer Manager, Throughput: 698.2 tokens/s, In-flight requests: 12, Waiting requests: 0, ITL mean=46.99 ms, median=47.57 ms, p99=48.88 ms, samples=6985
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:58 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:05:59 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:00 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+[2026-08-01 05:06:01 DP1 TP1 EP1] token_to_kv_pool_allocator memory leak detected! self.max_total_num_tokens=230212, available_size=230198, evictable_size=0, protected_size=0
+
+/home/yizhuoliang/miniconda3/envs/sglang/lib/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 2 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/yizhuoliang/miniconda3/envs/sglang/lib/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

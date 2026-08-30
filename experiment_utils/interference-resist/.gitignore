@@ -1,0 +1,5 @@
+# experiment outputs — not tracked
+results/
+results_*/
+__pycache__/
+*.pyc

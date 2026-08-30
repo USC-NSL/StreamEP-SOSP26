@@ -1,0 +1,228 @@
+CARC SLURM Cluster Notes for SGLang Fake-Prefill (8 GPU)
+========================================================
+
+Current Allocation
+------------------
+SLURM Job: 7337699
+Nodes: b04-13, b05-12, b05-14, b10-14  (4 nodes x 2 GPUs = 8x NVIDIA A100 80GB PCIe)
+
+  Node       eth0 IP         ib0 IP            node-rank
+  b04-13     10.125.75.190   10.125.137.190    0 (head)
+  b05-12     10.125.75.210   10.125.137.210    1
+  b05-14     10.125.75.212   10.125.137.212    2
+  b10-14     10.125.76.4     10.125.138.4      3
+
+Note: IB IPs span two /24 ranges (10.125.137.x and 10.125.138.x) but are
+within the same /19 subnet (10.125.128.0/19). Future allocations will have
+different nodes and IPs. Check with `ip addr show ib0` on each node.
+
+
+Key Differences from Other Clusters
+------------------------------------
+
+1. NFS shared filesystem — NO rsync needed
+
+   Unlike aisys-303 and sphere-16 where each node has local storage, CARC SLURM
+   uses NFS for /home1/ and BeeGFS for /scratch1/. Code changes and experiment
+   data are visible on all nodes immediately. This means:
+   - No rsync after code edits
+   - Recorder .pt files don't need collection from workers
+   - BUT: Triton cache AND torch.inductor cache MUST be node-local to avoid
+     NFS corruption from concurrent JIT compilation (same issue as aisys-303)
+     Fix: TRITON_CACHE_DIR=/tmp/triton_cache + TORCHINDUCTOR_CACHE_DIR=/tmp/torchinductor_cache
+     Without the inductor fix, CUDA graph capture fails with FileNotFoundError on NFS.
+
+2. Module system initialization requires `source /etc/profile.d/modules.sh`
+
+   On CARC compute nodes, `module` is not available in non-login shells.
+   Every script must start with:
+     source /etc/profile.d/modules.sh
+     module load cuda/12.6.3 ucx/1.16.0 gdrcopy/2.5.1-cuda
+   tmux is also available on compute nodes via `module load tmux`.
+
+3. Conda env path uses /scratch1/ not ~/
+
+   The conda env is at /scratch1/yizhuoli/conda-envs/sglang-fp (not ~/miniconda3/envs/).
+   conda init is via: eval "$(/home1/yizhuoli/miniconda3/bin/conda shell.bash hook)"
+
+4. netifaces had to be installed
+
+   SGLANG_LOCAL_IP_NIC=ib0 requires the `netifaces` Python package. It was not
+   pre-installed. Installed via:
+     pip install --cache-dir /scratch1/yizhuoli/pip_cache netifaces
+
+5. 2 GPUs per node (not 4)
+
+   aisys-303 has 4 GPUs/node, sphere-16 has 2 L40S/node. CARC SLURM has 2 A100
+   80GB PCIe per node. This means:
+   - EP8: tp=8, dp=8 (not 16)
+   - PP4xTP2: pp=4, tp=2 (not pp=4, tp=4)
+
+6. A100 80GB gives more memory headroom
+
+   Default mem_frac is 0.80 for high-concurrency EP8 benchmarks (0.85 causes
+   OOM on the logits all_gather at >1000 concurrent requests). PP4xTP2 can
+   safely use 0.85.
+
+7. Native InfiniBand (not RoCE)
+
+   Like aisys-303, CARC uses native IB on mlx5_0. No NCCL_IB_GID_INDEX needed
+   (that's only for RoCE v2 on sphere-16).
+
+8. GPU topology is SYS (cross-NUMA PCIe)
+
+   GPU0 and GPU1 on each node are connected via PCIe across NUMA boundaries
+   (SYS in nvidia-smi topo). No NVLink. This means:
+   - DeepEP won't work (requires NVLink)
+   - Must use mooncake-nccl for EP
+   - TP2 within a node uses PCIe (slower than NVLink but functional)
+
+   The IB HCA (mlx5_0) is on NUMA1 alongside GPU1:
+     GPU0 (NUMA0) <--SYS-->  IB card (NUMA1)   PCIe distance = 9
+     GPU1 (NUMA1) <--NODE--> IB card (NUMA1)   PCIe distance = 8
+
+9. Head server must bind --host 0.0.0.0
+
+   SGLang defaults to --host 127.0.0.1 (localhost only). Since the
+   orchestrator runs from carcai (login node), the head server must bind
+   on all interfaces so curl / bench_serving can reach it from carcai.
+   All head launch scripts include --host 0.0.0.0.
+
+10. PP4xTP2 requires --disable-custom-all-reduce
+
+    Custom all-reduce uses CUDA IPC handles for cross-GPU graph capture.
+    On A100 PCIe with SYS topology (cross-NUMA, no NVLink), the IPC
+    registration fails with "RuntimeError: invalid argument" in
+    get_graph_buffer_ipc_meta. All PP4xTP2 launch scripts (head and
+    worker) include --disable-custom-all-reduce.
+    EP8 does NOT need this flag because mooncake-nccl auto-disables
+    CUDA graphs.
+
+
+GPU Direct RDMA (GDR) Status
+-----------------------------
+
+NCCL defaults to GDR disabled on this cluster because the PCIe distance
+between both GPUs and the IB HCA exceeds NCCL's default threshold:
+
+  NCCL INFO GPU Direct RDMA Disabled for GPU 1 / HCA 0 (distance 8 > 5)
+  NCCL INFO GPU Direct RDMA Disabled for GPU 0 / HCA 0 (distance 9 > 5)
+
+Without GDR, all NCCL traffic stages through host memory (GPU -> PCIe ->
+CPU -> PCIe -> IB NIC), achieving ~4.6 GB/s bus bandwidth on an 8-way
+all-reduce (vs 24 GB/s wire speed on 200 Gbps IB).
+
+Independent testing confirms GDR IS functional on this hardware:
+
+  Test                                      Result
+  ----                                      ------
+  GDRCopy sanity (gdrcopy_sanity)           31/31 passed, 0 failed
+  GDRCopy write BW, GPU0 (NUMA0)           20433 MB/s
+  GDRCopy write BW, GPU1 (NUMA1)           14707 MB/s
+  NCCL 8-way all-reduce, no GDR            4.61 GB/s bus BW @ 64MB
+  NCCL 8-way all-reduce, GDR=SYS           9.76 GB/s bus BW @ 64MB  (2.1x)
+
+GDR gives 2.1x bandwidth improvement in standalone NCCL all-reduce tests
+and completes without hanging at all message sizes tested (10KB - 64MB).
+
+
+Running with GDR enabled
+........................
+
+Add this to launch scripts:
+  export NCCL_NET_GDR_LEVEL=SYS
+
+Or sed one-liner for all scripts:
+  for f in experiments/scripts/carc-slurm-8/launch_*.sh; do
+      sed -i 's|export NCCL_DEBUG=WARN|export NCCL_DEBUG=WARN\nexport NCCL_NET_GDR_LEVEL=SYS|' "$f"
+  done
+
+To remove:
+  for f in experiments/scripts/carc-slurm-8/launch_*.sh; do
+      sed -i '/export NCCL_NET_GDR_LEVEL/d' "$f"
+  done
+
+
+Running without GDR (current default)
+......................................
+
+Launch scripts ship without NCCL_NET_GDR_LEVEL set, so NCCL uses its
+default threshold (5) which disables GDR on both GPUs. This is the
+stable configuration.
+
+
+Known issue: SGLang mooncake-nccl hangs with GDR at concurrency >= ~40
+......................................................................
+
+When NCCL_NET_GDR_LEVEL=SYS is set, SGLang EP8 with mooncake-nccl
+works at low concurrency (tested up to ~5 concurrent requests, 27ms
+median ITL vs 52ms without GDR) but HANGS at higher concurrency
+(>=50 concurrent requests). The hang occurs regardless of whether CUDA
+graphs are enabled or disabled (--disable-cuda-graph was tested).
+
+Standalone NCCL all-reduce does NOT hang with GDR at any size. The
+hang is specific to SGLang's mooncake-nccl MoE expert-parallel
+communication pattern (all-to-all dispatch + combine), not to the
+hardware, NCCL, or nvidia_peermem driver.
+
+Symptoms:
+  - Server passes health check after startup
+  - First few requests complete normally
+  - At ~40+ concurrent decode batches, server stops responding
+  - Watchdog timeout after 300s, health check hangs
+  - No OOM or NCCL error in logs — clean hang (deadlock)
+
+This is a SOFTWARE BUG in SGLang's mooncake-nccl backend, not a cluster
+limitation. Fixing it would unlock ~2x IB bandwidth (9.76 vs 4.61 GB/s).
+
+TODO for future fix:
+  - Reproduce with a minimal mooncake-nccl all-to-all test (not full SGLang)
+  - Check if the issue is in NCCL's all-to-all or in mooncake-nccl's
+    scheduling of overlapping collectives
+  - File SGLang issue if confirmed as mooncake-nccl bug
+  - Once fixed, add NCCL_NET_GDR_LEVEL=SYS to all launch scripts
+
+
+Baseline Performance (no GDR, no recorder)
+------------------------------------------
+
+EP8 mooncake-nccl, ShareGPT profile, mem_frac=0.80:
+
+  Prompts   Rate   Concurrency   Output tok/s   Median ITL (ms)
+  50        50     39            743            52
+  500       250    399           2907           144
+  2000      500    1701          3858           486
+
+Per-GPU throughput: 482 tok/s — 33% higher than L40S (363 tok/s/GPU)
+despite the IB bandwidth handicap from disabled GDR.
+
+
+Hardware Summary
+----------------
+- GPU: NVIDIA A100 80GB PCIe (SM80), 2 per node
+- CPU: AMD EPYC 7513 32-Core (2 sockets per node)
+- RAM: 252 GB per node
+- Network: InfiniBand 200 Gb/s, native IB link layer, single HCA mlx5_0
+- IB subnet: 10.125.128.0/19 (ib0 interface)
+- Ethernet: 10.125.64.0/17 (eth0, for SSH/management)
+- Home: /home1/yizhuoli/ (NFS, limited quota)
+- Scratch: /scratch1/yizhuoli/ (BeeGFS, shared across nodes)
+
+
+Quick Start (current allocation)
+---------------------------------
+# EP8 quick test (from carcai login node):
+bash experiments/scripts/carc-slurm-8/run_ep8_quick_test.sh \
+    b04-13 10.125.137.190:25000 b05-12 b05-14 b10-14
+
+# Full EP8 experiment:
+bash experiments/scripts/carc-slurm-8/run_ep8_skew_comparison.sh \
+    b04-13 10.125.137.190:25000 b05-12 b05-14 b10-14
+
+# Full PP4xTP2 experiment:
+bash experiments/scripts/carc-slurm-8/run_pptp8_skew_comparison.sh \
+    b04-13 10.125.137.190:25000 b05-12 b05-14 b10-14
+
+# sgl-022 recorder overhead measurement:
+bash experiments/scripts/carc-slurm-8/run_sgl022_carc.sh \
+    b04-13 10.125.137.190:25000 b05-12 b05-14 b10-14

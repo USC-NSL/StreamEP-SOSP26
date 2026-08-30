@@ -1,0 +1,11 @@
+22:37:49 [iface] 'single-link': 1 flow(s) x6 trace=aws_hpc_metal cap=200Gbps streams=8 (rc/RDMA)
+[interfere] Trace loaded: 799,680 samples, median=27.61 GB/s, max=29.83 GB/s
+[interfere] Scaling: max → 200 Gbps (link capacity)
+[interfere] Schedule: 799680 windows × 4.50ms, avg=16.6 Gbps, min=0.0, max=92.7 Gbps
+[interfere] V2 schedule written: 799680 windows × 4.50ms = 3600s, avg_rate=12.2 Gbps, file=6248 KB → /tmp/iface_sched.bin
+22:37:49 [iface]   flow sgpu6 -> sgpu7  ports 18515-18522
+22:37:53 [iface] interference live: head TX ~70 Gbps RDMA (settled ~0s); warmup 25s ...
+22:41:42 [iface]   flow sgpu6 -> sgpu7: achieved 115.8 / target 63.5 Gbps (8 streams reporting)
+22:41:45 [iface] head TOTAL IB TX ~100 Gbps (interference + NCCL)
+[iface] sgpu6 sender whole-run avg: 95.7 Gbps across 8 streams
+[iface] sgpu7 sender whole-run avg: 93.1 Gbps across 8 streams

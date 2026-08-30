@@ -1,0 +1,99 @@
+aisys-303 Cluster Notes for SGLang Fake-Prefill (16 GPU)
+========================================================
+
+Current Allocation Example
+--------------------------
+Nodes: aisys-303-cluster[01-03, 07]  (4 nodes x 4 GPUs = 16x NVIDIA RTX A6000)
+
+  Node                    ib0 IP       node-rank
+  aisys-303-cluster01     10.0.0.11    0 (head)
+  aisys-303-cluster02     10.0.0.12    1
+  aisys-303-cluster03     10.0.0.13    2
+  aisys-303-cluster07     10.0.0.17    3
+
+Note: The IB IPs follow the pattern 10.0.0.{10+N} where N is the cluster node
+number (e.g., cluster07 -> 10.0.0.17, NOT 10.0.0.14). Future allocations will
+have different nodes and IPs. Check with `ip addr show ib0` on each node.
+
+
+Things We Didn't Realize (Lessons Learned)
+------------------------------------------
+
+1. NCCL_SOCKET_IFNAME and GLOO_SOCKET_IFNAME must be set to ib0
+
+   SGLang does NOT auto-detect the InfiniBand interface. Without these, NCCL
+   and Gloo default to eth0, which is on a different subnet (192.168.0.x) and
+   cannot reach other nodes' IB addresses (10.0.0.x). This causes "connection
+   refused" errors during torch.distributed init.
+
+2. SGLANG_LOCAL_IP_NIC=ib0 is needed (and requires `pip install netifaces`)
+
+   SGLang's internal ZMQ sockets and the shared-memory broadcast layer call
+   get_local_ip_auto() to find the local IP. Without SGLANG_LOCAL_IP_NIC, it
+   falls back to connecting to 8.8.8.8 and using whichever interface the OS
+   routes through -- which is eth0, not ib0. This causes cross-node ZMQ
+   connections to fail.
+
+   The netifaces package is NOT in SGLang's default dependencies. Install it:
+     ~/coulson/conda_envs/bin/pip install netifaces
+
+3. TRITON_CACHE_DIR must be set to a local (non-NFS) path
+
+   By default Triton caches compiled kernels in ~/.triton/cache/, which lives
+   on NFS (/nfs/home/...). When 16 GPU processes across 4 nodes JIT-compile
+   kernels concurrently into the same NFS directory, you get:
+     - Stale NFS file handles (ESTALE) when loading .so files
+     - Bus errors / segfaults from mmapping corrupted shared objects
+   One node crashing cascades to all others via distributed barriers.
+
+   Fix: export TRITON_CACHE_DIR=/tmp/triton_cache
+   This keeps the cache node-local. The first run after clearing the cache
+   takes longer since each node compiles independently.
+
+4. IB HCA is mlx5_0, not mlx5_1
+
+   The sphere-16 cluster uses mlx5_1. On aisys-303, there is only mlx5_0.
+   Check with: ls /sys/class/infiniband/
+
+5. No NCCL_IB_GID_INDEX needed
+
+   The sphere-16 scripts set NCCL_IB_GID_INDEX=3 (for RoCE v2). On aisys-303
+   the IB ports use native InfiniBand (not RoCE), so this is not needed.
+
+6. Default mem-fraction-static should be 0.70, not 0.80
+
+   The A6000 has 48GB VRAM. With the gpt-oss-120b model in dummy mode and
+   tp=16 dp=16, each GPU uses ~38GB. 0.70 leaves enough room for CUDA graph
+   capture. 0.80 may OOM during graph capture on A6000s.
+
+
+Cluster Hardware Summary
+------------------------
+- GPU: NVIDIA RTX A6000 (48GB VRAM each), 4 per node
+- Network: InfiniBand via ib0, single HCA mlx5_0, 100 Gb/s
+- IB subnet: 10.0.0.0/24
+- Ethernet subnet: 192.168.0.0/24 (eth0, used for SSH/management)
+- Storage: NFS home at /nfs/home/<user>, local SSD at /tmp
+- Shared memory: varies by node (cluster01: 512G, cluster03: 252G)
+- Conda env: ~/coulson/conda_envs
+- SGLang repo: ~/coulson/sglang-fake-prefill
+
+
+Quick Start (current allocation)
+---------------------------------
+# From aisys-303-cluster01 (head):
+bash experiments/scripts/aisys-16/launch_head_ep.sh \
+    10.0.0.11:25000 \
+    ./gating_profiles/gating_gptoss120b_sharegpt_200.parquet \
+    /tmp/sglang_head.log
+
+# From each worker (cluster02, cluster03, cluster07), change rank:
+bash experiments/scripts/aisys-16/launch_worker_ep.sh \
+    1 10.0.0.11:25000 \
+    ./gating_profiles/gating_gptoss120b_sharegpt_200.parquet \
+    /tmp/sglang_w1.log
+
+# Or use the orchestrator from the head node:
+bash experiments/scripts/aisys-16/run_experiments.sh \
+    10.0.0.11:25000 \
+    aisys-303-cluster02 aisys-303-cluster03 aisys-303-cluster07

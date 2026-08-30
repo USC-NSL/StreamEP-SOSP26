@@ -1,0 +1,1 @@
+Measure EP16 balanced-legal performance under two-node interference on sgpu0<->sgpu2 using AWS and Azure traces at 200 Gbps for mem-frac 0.77 and 0.55, then compare to sgl-043 no-interference baselines with the same 256-512 workload.
